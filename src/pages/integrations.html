@@ -4,104 +4,335 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OsonTrack — Integratsiyalar</title>
+
+    <meta
+      name="description"
+      content="OsonTrack integratsiyalari: Telegram/SMS, POS/Printer, 1C/API, Excel import/export. Xavfsiz ma’lumot almashinuvi va avtomatlashtirish."
+    />
+    <meta name="theme-color" content="#070A12" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../assets/css/tokens.css" />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/components.css" />
     <link rel="stylesheet" href="../assets/css/pages.css" />
+
+    <style>
+      /* integrations micro styles */
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: rgba(255, 255, 255, 0.05);
+        font-weight: 750;
+        color: var(--color-ink);
+        font-size: 0.9rem;
+      }
+      .pill.ok { border-color: rgba(17, 201, 127, 0.35); background: rgba(17, 201, 127, 0.10); }
+      .pill.soon { border-color: rgba(255, 255, 255, 0.16); background: rgba(255, 255, 255, 0.05); color: var(--color-muted); }
+
+      .cards-head { display:flex; align-items:flex-end; justify-content:space-between; gap: 1rem; flex-wrap: wrap; }
+      .cards-head .muted { max-width: 680px; }
+
+      .split { display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.25rem; align-items: start; }
+      @media (max-width: 980px) { .split { grid-template-columns: 1fr; } }
+
+      .mini { border-radius: var(--radius-xl); border: 1px solid var(--color-border); background: rgba(255,255,255,.04); box-shadow: var(--shadow-soft); padding: 1.05rem 1.1rem; }
+      .mini h4 { margin: 0 0 0.25rem; }
+      .mini p { margin: 0; color: var(--color-muted); }
+
+      .steps { display:grid; gap: 0.9rem; }
+      .step { border-radius: var(--radius-xl); border: 1px solid var(--color-border); background: rgba(255,255,255,.04); box-shadow: var(--shadow-soft); padding: 1.05rem 1.1rem; }
+      .step .k { font-size: 0.78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted); }
+      .step h4 { margin: 0.35rem 0 0.25rem; }
+      .step p { margin: 0; color: var(--color-muted); }
+    </style>
   </head>
+
   <body>
-    <header class="topbar">
+    <header class="topbar" role="banner">
       <div class="container topbar-inner">
-        <a class="logo" href="../index.html">
+        <a class="logo" href="../index.html" aria-label="OsonTrack bosh sahifa">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
         </a>
-        <nav class="nav" data-nav>
+
+        <nav class="nav" data-nav aria-label="Asosiy menyu">
           <a href="../index.html">Bosh sahifa</a>
           <a href="features.html">Funksiyalar</a>
           <a href="solutions.html">Yechimlar</a>
+          <a href="integrations.html" aria-current="page">Integratsiyalar</a>
           <a href="pricing.html">Tariflar</a>
+          <a href="faq.html">FAQ</a>
           <a href="contact.html">Aloqa</a>
         </nav>
+
         <div class="nav-actions">
-          <button class="mobile-toggle" data-nav-toggle>Menu</button>
+          <button class="mobile-toggle" type="button" data-nav-toggle aria-label="Menyuni ochish/yopish">
+            Menu
+          </button>
           <a class="button button-ghost" href="pricing.html">Demo so‘rash</a>
           <a class="button button-primary" href="contact.html">Sotib olish</a>
         </div>
       </div>
     </header>
 
-    <section class="section">
-      <div class="container">
-        <span class="badge">Integratsiyalar</span>
-        <h1 class="section-title">OsonTrack ekotizimi bilan birlashtiring.</h1>
-        <p class="section-subtitle">
-          Siz ishlatayotgan servislar bilan tez integratsiya, avtomatlashtirilgan jarayonlar va
-          xavfsiz ma’lumot almashinuvi.
-        </p>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Telegram & SMS</h3>
-            <p>Filiallar bo‘yicha real vaqt bildirishnomalari va eslatmalar.</p>
-          </div>
-          <div class="card">
-            <h3>POS & Printer</h3>
-            <p>Qurilmalarni plug-and-play usulida ulash va chek bosib chiqarish.</p>
-          </div>
-          <div class="card">
-            <h3>1C & API</h3>
-            <p>ERP va accounting tizimlari bilan xavfsiz ikki tomonlama integratsiya.</p>
-          </div>
-          <div class="card">
-            <h3>Excel Import/Export</h3>
-            <p>Katta ma’lumotlarni tez import qilish va hisobotlarni eksport qilish.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main>
+      <!-- Hero -->
+      <section class="hero hero--aurora">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="badge badge--glow">Integratsiyalar</span>
+            <h1 class="hero-title">OsonTrack ekotizimi bilan birlashtiring.</h1>
+            <p class="hero-lead">
+              Siz ishlatayotgan servislar bilan tez integratsiya, avtomatlashtirilgan jarayonlar va xavfsiz ma’lumot almashinuvi.
+              Natija: kamroq qo‘lda ish, ko‘proq nazorat.
+            </p>
 
-    <section class="section">
-      <div class="container cta">
-        <div>
-          <h2>Integratsiya bo‘yicha texnik konsultatsiya kerakmi?</h2>
-          <p>Texnik jamoa 1 kun ichida bog‘lanadi va reja tayyorlaydi.</p>
-        </div>
-        <div>
-          <a class="button button-primary" href="contact.html">Konsultatsiya so‘rash</a>
-        </div>
-      </div>
-    </section>
+            <div class="hero-actions">
+              <a class="button button-primary" href="contact.html">Texnik konsultatsiya</a>
+              <a class="button button-ghost" href="pricing.html">Tariflar</a>
+            </div>
 
-    <footer class="footer">
+            <div class="hero-trust" style="margin-top: 1rem;">
+              <span class="trust-pill">Webhook / API</span>
+              <span class="trust-pill">Audit log</span>
+              <span class="trust-pill">Excel import/export</span>
+              <span class="trust-pill">Real vaqt bildirishnoma</span>
+            </div>
+          </div>
+
+          <aside class="card card--elevated">
+            <h3 style="margin:0 0 0.35rem;">Tez ulanish</h3>
+            <p class="muted" style="margin:0;">
+              Kerakli integratsiyani tanlaymiz, test muhitida tekshiramiz va production’ga chiqaramiz.
+            </p>
+
+            <ul class="list-check" style="margin-top: 1rem;">
+              <li>1 kun ichida texnik reja</li>
+              <li>Minimal downtime</li>
+              <li>Ma’lumotlar xavfsizligi</li>
+              <li>Monitoring va support</li>
+            </ul>
+
+            <div class="card-actions">
+              <a class="button button-primary button-block" href="contact.html">Bog‘lanish</a>
+              <a class="button button-ghost button-block" href="faq.html">FAQ</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Integrations cards -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="cards-head">
+            <div>
+              <h2 class="section-title">Integratsiyalar katalogi</h2>
+              <p class="section-subtitle muted" style="margin-bottom:0;">
+                Asosiy integratsiyalar tayyor. Maxsus integratsiya kerak bo‘lsa, API orqali ulaymiz.
+              </p>
+            </div>
+            <div class="contact-row" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <span class="pill ok">Available</span>
+              <span class="pill soon">Coming soon</span>
+            </div>
+          </div>
+
+          <div class="card-grid card-grid--premium" style="margin-top: 1.25rem;">
+            <article class="card card--hover">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap: 0.75rem; flex-wrap:wrap;">
+                <h3 style="margin:0;">Telegram & SMS</h3>
+                <span class="pill ok">Available</span>
+              </div>
+              <p class="muted">
+                Filiallar bo‘yicha real vaqt bildirishnomalari, eslatmalar va operatsion signal’lar.
+              </p>
+              <ul class="list-check">
+                <li>KPI va savdo summary</li>
+                <li>Qoldiq eslatmalari</li>
+                <li>Qarzdorlik va kassir alert</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap: 0.75rem; flex-wrap:wrap;">
+                <h3 style="margin:0;">POS & Printer</h3>
+                <span class="pill ok">Available</span>
+              </div>
+              <p class="muted">
+                Qurilmalarni plug-and-play usulida ulash, chek bosib chiqarish va POS jarayonlari.
+              </p>
+              <ul class="list-check">
+                <li>Tez checkout</li>
+                <li>Chek shablonlari</li>
+                <li>Barqaror ishlash</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap: 0.75rem; flex-wrap:wrap;">
+                <h3 style="margin:0;">1C & API</h3>
+                <span class="pill ok">Available</span>
+              </div>
+              <p class="muted">
+                ERP / accounting tizimlari bilan xavfsiz ikki tomonlama integratsiya. Webhook va token’lar orqali.
+              </p>
+              <ul class="list-check">
+                <li>Ma’lumot sinxronlash</li>
+                <li>Ruxsatlar va audit</li>
+                <li>Custom endpoint’lar</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap: 0.75rem; flex-wrap:wrap;">
+                <h3 style="margin:0;">Excel Import/Export</h3>
+                <span class="pill ok">Available</span>
+              </div>
+              <p class="muted">
+                Katta ma’lumotlarni tez import qilish va hisobotlarni eksport qilish. Migratsiya uchun ideal.
+              </p>
+              <ul class="list-check">
+                <li>Mahsulot / qoldiq import</li>
+                <li>Hisobot eksport</li>
+                <li>CSV/Excel formatlari</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap: 0.75rem; flex-wrap:wrap;">
+                <h3 style="margin:0;">Bank to‘lovlari</h3>
+                <span class="pill soon">Coming soon</span>
+              </div>
+              <p class="muted">
+                To‘lov statuslari, tushumlar va tranzaksiyalarni avtomatik bog‘lash (kelishuv asosida).
+              </p>
+              <ul class="list-check">
+                <li>Tushumlarni moslash</li>
+                <li>Status monitoring</li>
+                <li>Hisobot avtomatizatsiya</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap: 0.75rem; flex-wrap:wrap;">
+                <h3 style="margin:0;">E-invoice / E-imzo</h3>
+                <span class="pill soon">Coming soon</span>
+              </div>
+              <p class="muted">
+                Elektron hisob-faktura va raqamli imzo integratsiyalari (regulyatsiya va provider bo‘yicha).
+              </p>
+              <ul class="list-check">
+                <li>Hujjat aylanishi</li>
+                <li>Elektron tasdiq</li>
+                <li>Audit va arxiv</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security / API -->
+      <section class="section">
+        <div class="container split">
+          <div class="highlight-panel highlight-panel--premium">
+            <span class="badge badge--glow">Xavfsizlik</span>
+            <h2 class="section-title" style="margin-top: 0.8rem;">Xavfsiz ma’lumot almashinuvi</h2>
+            <p class="section-subtitle">
+              Integratsiyalar token’lar, ruxsatlar va audit log orqali nazorat qilinadi. Har bir ulanish “least privilege”
+              tamoyili bo‘yicha ishlaydi.
+            </p>
+
+            <ul class="list-check">
+              <li>Rolga asoslangan kirish (RBAC)</li>
+              <li>Audit log va monitoring</li>
+              <li>Webhook / API token boshqaruvi</li>
+              <li>Eksport va import nazorati</li>
+            </ul>
+          </div>
+
+          <div class="steps" aria-label="Texnik joriy etish bosqichlari">
+            <div class="step">
+              <div class="k">1-bosqich</div>
+              <h4>Talab va texnik reja</h4>
+              <p>Servis(lar) ro‘yxati, oqimlar va kerakli endpoint’lar bo‘yicha reja tuzamiz.</p>
+            </div>
+            <div class="step">
+              <div class="k">2-bosqich</div>
+              <h4>Ulash va test</h4>
+              <p>Test muhitida sinovdan o‘tkazamiz, log’lar va natijani tekshiramiz.</p>
+            </div>
+            <div class="step">
+              <div class="k">3-bosqich</div>
+              <h4>Production va monitoring</h4>
+              <p>Prod’ga chiqaramiz, monitoring o‘rnatamiz va support jarayonini yo‘lga qo‘yamiz.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta cta--premium">
+            <div>
+              <h2>Integratsiya bo‘yicha texnik konsultatsiya kerakmi?</h2>
+              <p class="muted">Texnik jamoa 1 kun ichida bog‘lanadi va reja tayyorlaydi.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="contact.html">Konsultatsiya so‘rash</a>
+              <a class="button button-ghost" href="faq.html">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
       <div class="container footer-grid">
-        <div>
+        <div class="footer-brand">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
-          <p>SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
+          <p class="muted">SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
         </div>
         <div>
           <h4>Mahsulot</h4>
           <a href="features.html">Funksiyalar</a><br />
           <a href="solutions.html">Yechimlar</a><br />
-          <a href="pricing.html">Tariflar</a>
+          <a href="integrations.html">Integratsiyalar</a><br />
+          <a href="pricing.html">Tariflar</a><br />
+          <a href="faq.html">FAQ</a>
         </div>
         <div>
           <h4>Kompaniya</h4>
           <a href="about.html">Biz haqimizda</a><br />
-          <a href="contact.html">Aloqa</a>
+          <a href="contact.html">Aloqa</a><br />
+          <a href="privacy.html">Maxfiylik</a><br />
+          <a href="terms.html">Shartlar</a>
         </div>
         <div>
           <h4>Aloqa</h4>
-          <p>+998 90 000 00 00</p>
-          <p>hello@osontrack.uz</p>
+          <p class="muted">+998 90 000 00 00</p>
+          <p class="muted">hello@osontrack.uz</p>
         </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="y"></span> OsonTrack. Barcha huquqlar himoyalangan.</span>
       </div>
     </footer>
 
     <script src="../assets/js/app.js"></script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
