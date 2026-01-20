@@ -4,165 +4,247 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OsonTrack — SRM do‘kon hisob-kitoblari uchun premium yechim</title>
+
     <meta
       name="description"
-      content="OsonTrack — SRM do‘konlari uchun hisob-kitob, ombor va savdoni to‘liq boshqaruvchi premium platforma."
+      content="OsonTrack — SRM do‘konlari uchun savdo, ombor, qarzdorlik va moliyaviy hisobotlarni bir joyda boshqaruvchi premium platforma."
     />
+    <meta name="theme-color" content="#070A12" />
+    <link rel="canonical" href="https://osontrack.uz/" />
+
+    <!-- Open Graph (keyin qolgan page'larda ham bir xil qilamiz) -->
+    <meta property="og:title" content="OsonTrack — SRM do‘konlar uchun premium yechim" />
+    <meta
+      property="og:description"
+      content="Savdo, ombor, qarzdorlik va hisobotlarni bir platformada. Tez, xavfsiz, premium."
+    />
+    <meta property="og:type" content="website" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="assets/css/tokens.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
     <link rel="stylesheet" href="assets/css/pages.css" />
   </head>
+
   <body>
-    <header class="topbar">
+    <!-- Premium topbar -->
+    <header class="topbar topbar--sticky" role="banner">
       <div class="container topbar-inner">
-        <a class="logo" href="index.html">
+        <a class="logo" href="index.html" aria-label="OsonTrack bosh sahifa">
           <img src="assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
         </a>
-        <nav class="nav" data-nav>
-          <a href="index.html">Bosh sahifa</a>
+
+        <nav class="nav" data-nav aria-label="Asosiy menyu">
+          <a href="index.html" aria-current="page">Bosh sahifa</a>
           <a href="pages/features.html">Funksiyalar</a>
           <a href="pages/solutions.html">Yechimlar</a>
+          <a href="pages/integrations.html">Integratsiyalar</a>
           <a href="pages/pricing.html">Tariflar</a>
           <a href="pages/contact.html">Aloqa</a>
         </nav>
+
         <div class="nav-actions">
-          <button class="mobile-toggle" data-nav-toggle>Menu</button>
+          <button class="mobile-toggle" type="button" data-nav-toggle aria-label="Menyuni ochish/yopish">
+            Menu
+          </button>
           <a class="button button-ghost" href="pages/pricing.html">Demo so‘rash</a>
           <a class="button button-primary" href="pages/contact.html">Sotib olish</a>
         </div>
       </div>
     </header>
 
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="badge">Premium SRM boshqaruvi</span>
-          <h1>OsonTrack bilan do‘kon hisob-kitoblari soddalashadi.</h1>
-          <p>
-            Savdo, ombor, qarzdorlik va moliyaviy hisobotlarni bir joyda boshqaring.
-            OsonTrack — SRM do‘konlari uchun brend darajadagi, tez va ishonchli yechim.
-          </p>
-          <div class="nav-actions">
-            <a class="button button-primary" href="pages/pricing.html">Tariflarni ko‘rish</a>
-            <a class="button button-ghost" href="pages/features.html">Platformani ko‘rish</a>
-          </div>
-          <div class="kpi-grid">
-            <div class="kpi">
-              <strong>40%+</strong>
-              <span>Hisobot va hisob-kitob tezlashadi</span>
+    <!-- Hero -->
+    <main>
+      <section class="hero hero--aurora">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="badge badge--glow">Premium SRM boshqaruvi</span>
+            <h1 class="hero-title">OsonTrack bilan do‘kon hisob-kitoblari soddalashadi.</h1>
+            <p class="hero-lead">
+              Savdo, ombor, qarzdorlik va moliyaviy hisobotlarni bir joyda boshqaring.
+              OsonTrack — SRM do‘konlari uchun brend darajadagi, tez va ishonchli yechim.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="pages/pricing.html">Tariflarni ko‘rish</a>
+              <a class="button button-ghost" href="pages/features.html">Platformani ko‘rish</a>
             </div>
-            <div class="kpi">
-              <strong>24/7</strong>
-              <span>Onlayn monitoring va nazorat</span>
+
+            <div class="kpi-grid" aria-label="OsonTrack natijalari">
+              <div class="kpi kpi--card">
+                <strong>40%+</strong>
+                <span>Hisobot va hisob-kitob tezlashadi</span>
+              </div>
+              <div class="kpi kpi--card">
+                <strong>24/7</strong>
+                <span>Onlayn monitoring va nazorat</span>
+              </div>
+              <div class="kpi kpi--card">
+                <strong>100+</strong>
+                <span>SRM do‘konlari ishonchi</span>
+              </div>
             </div>
-            <div class="kpi">
-              <strong>100+</strong>
-              <span>SRM do‘konlari ishonchi</span>
+
+            <div class="hero-trust" aria-label="Ishonch bloklari">
+              <span class="trust-pill">Xavfsiz kirish</span>
+              <span class="trust-pill">Tez ishlash</span>
+              <span class="trust-pill">Onboarding</span>
+              <span class="trust-pill">Texnik yordam</span>
+            </div>
+          </div>
+
+          <aside class="hero-card hero-note card card--elevated">
+            <div class="card-head">
+              <h3>OsonTrack sizga nima beradi?</h3>
+              <p class="muted">
+                Do‘kon uchun zarur bo‘lgan barcha boshqaruv modul’lari — bir joyda.
+              </p>
+            </div>
+
+            <ul class="list-check">
+              <li>Real vaqt rejimida savdo va foyda ko‘rsatkichlari</li>
+              <li>Ombor qoldiqlari va avtomatik buyurtma eslatmalari</li>
+              <li>Xodimlar roli va xavfsiz kirish</li>
+              <li>Professional hisobotlar va moliyaviy tahlil</li>
+            </ul>
+
+            <div class="card-actions">
+              <a class="button button-primary button-block" href="pages/contact.html">Konsultatsiya olish</a>
+              <a class="button button-ghost button-block" href="pages/pricing.html">Tariflar</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Asosiy imkoniyatlar</h2>
+            <p class="section-subtitle">
+              OsonTrack SRM do‘koningiz uchun to‘liq boshqaruv paneli: savdo, ombor, marketing va
+              hisob-kitoblarni bir platformada yuriting.
+            </p>
+          </div>
+
+          <div class="card-grid card-grid--premium">
+            <article class="card card--hover">
+              <h3>Smart kassir va savdo</h3>
+              <p>Tezkor POS, cheklar, qaytarishlar va chegirmalarni boshqaring.</p>
+            </article>
+            <article class="card card--hover">
+              <h3>Ombor nazorati</h3>
+              <p>Qoldiq va yetkazib beruvchilarni avtomatik kuzatib boring.</p>
+            </article>
+            <article class="card card--hover">
+              <h3>Moliyaviy tahlil</h3>
+              <p>Daromad, xarajat va foyda bo‘yicha real vaqt hisobotlari.</p>
+            </article>
+            <article class="card card--hover">
+              <h3>CRM &amp; xodimlar</h3>
+              <p>Mijozlar bazasi, qarzdorlik va xodim rollari bir joyda.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlight panel -->
+      <section class="section">
+        <div class="container">
+          <div class="highlight-panel highlight-panel--premium">
+            <span class="badge badge--glow">Yakuniy natija</span>
+            <h2 class="section-title">OsonTrack — SRM do‘koningizning ideal boshqaruv markazi.</h2>
+            <p class="section-subtitle">
+              Savdo operatsiyalari, ombor, hisob-kitoblar va analitikani birlashtirgan premium
+              platforma orqali jamoangizni tezroq ishlashga olib keling.
+            </p>
+
+            <div class="highlight-grid">
+              <ul class="list-check">
+                <li>Bir necha filialni yagona panelda boshqarish</li>
+                <li>Integratsiyalar: Telegram, POS, bank to‘lovlari</li>
+                <li>Ma’lumotlar xavfsizligi va rolga asoslangan kirish</li>
+                <li>Onlayn onboarding va texnik yordam</li>
+              </ul>
+
+              <div class="mini-card card card--elevated">
+                <h4>Tez boshlash</h4>
+                <p class="muted">
+                  24 soat ichida demo, migratsiya yo‘riqnomasi va individual tarif taklifi.
+                </p>
+                <a class="button button-primary button-block" href="pages/contact.html">Boshlash</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="hero-card hero-note">
-          <h3>OsonTrack sizga nima beradi?</h3>
-          <ul>
-            <li>Real vaqt rejimida savdo va foyda ko‘rsatkichlari</li>
-            <li>Ombor qoldiqlari va avtomatik buyurtma eslatmalari</li>
-            <li>Xodimlar roli va xavfsiz kirish</li>
-            <li>Professional hisobotlar va moliyaviy tahlil</li>
-          </ul>
-          <a class="button button-primary" href="pages/contact.html">Konsultatsiya olish</a>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Asosiy imkoniyatlar</h2>
-        <p class="section-subtitle">
-          OsonTrack SRM do‘koningiz uchun to‘liq boshqaruv paneli: savdo, ombor, marketing va
-          hisob-kitoblarni bir platformada yuriting.
-        </p>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Smart kassir va savdo</h3>
-            <p>Tezkor POS, cheklar, qaytarishlar va chegirmalarni boshqaring.</p>
-          </div>
-          <div class="card">
-            <h3>Ombor nazorati</h3>
-            <p>Qoldiq va yetkazib beruvchilarni avtomatik kuzatib boring.</p>
-          </div>
-          <div class="card">
-            <h3>Moliyaviy tahlil</h3>
-            <p>Daromad, xarajat va foyda bo‘yicha real vaqt hisobotlari.</p>
-          </div>
-          <div class="card">
-            <h3>CRM & xodimlar</h3>
-            <p>Mijozlar bazasi, qarzdorlik va xodim rollari bir joyda.</p>
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta cta--premium">
+            <div>
+              <h2>OsonTrack bilan savdo jarayonlarini soddalashtiring.</h2>
+              <p class="muted">
+                Bizning jamoa demo taqdimot va individual taklifni 24 soat ichida tayyorlaydi.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="pages/pricing.html">Tariflarni tanlash</a>
+              <a class="button button-ghost" href="pages/contact.html">Savol berish</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section class="section">
-      <div class="container highlight-panel">
-        <span class="badge">Yakuniy natija</span>
-        <h2 class="section-title">OsonTrack — SRM do‘koningizning ideal boshqaruv markazi.</h2>
-        <p class="section-subtitle">
-          Savdo operatsiyalari, ombor, hisob-kitoblar va analitikani birlashtirgan premium
-          platforma orqali jamoangizni tezroq ishlashga olib keling.
-        </p>
-        <ul class="list-check">
-          <li>Bir necha filialni yagona panelda boshqarish</li>
-          <li>Integratsiyalar: Telegram, POS, bank to‘lovlari</li>
-          <li>Ma’lumotlar xavfsizligi va rolga asoslangan kirish</li>
-          <li>Onlayn onboarding va texnik yordam</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container cta">
-        <div>
-          <h2>OsonTrack bilan savdo jarayonlarini soddalashtiring.</h2>
-          <p>Bizning jamoa demo taqdimot va individual taklifni 24 soat ichida tayyorlaydi.</p>
-        </div>
-        <div>
-          <a class="button button-primary" href="pages/pricing.html">Tariflarni tanlash</a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
       <div class="container footer-grid">
-        <div>
+        <div class="footer-brand">
           <img src="assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
-          <p>SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
+          <p class="muted">SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
         </div>
+
         <div>
           <h4>Mahsulot</h4>
           <a href="pages/features.html">Funksiyalar</a><br />
           <a href="pages/solutions.html">Yechimlar</a><br />
+          <a href="pages/integrations.html">Integratsiyalar</a><br />
           <a href="pages/pricing.html">Tariflar</a>
         </div>
+
         <div>
           <h4>Kompaniya</h4>
           <a href="pages/about.html">Biz haqimizda</a><br />
-          <a href="pages/contact.html">Aloqa</a>
+          <a href="pages/contact.html">Aloqa</a><br />
+          <a href="pages/privacy.html">Maxfiylik</a><br />
+          <a href="pages/terms.html">Shartlar</a>
         </div>
+
         <div>
           <h4>Aloqa</h4>
-          <p>+998 90 000 00 00</p>
-          <p>hello@osontrack.uz</p>
+          <p class="muted">+998 90 000 00 00</p>
+          <p class="muted">hello@osontrack.uz</p>
         </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="y"></span> OsonTrack. Barcha huquqlar himoyalangan.</span>
       </div>
     </footer>
 
     <script src="assets/js/app.js"></script>
+    <script>
+      // footer year (tiny enhancement)
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
