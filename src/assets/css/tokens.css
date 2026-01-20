@@ -1,31 +1,103 @@
 :root {
-  color-scheme: light;
-  --color-bg: #f5f7fb;
-  --color-surface: #ffffff;
-  --color-ink: #0b0f14;
-  --color-muted: #5d6777;
-  --color-border: #e4e9f2;
-  --color-primary: #11c97f;
-  --color-primary-dark: #0aa66a;
-  --color-accent: #0e1b2e;
-  --color-gradient: linear-gradient(135deg, #0e1b2e 0%, #122a42 45%, #0a1018 100%);
-  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
-  --shadow-strong: 0 22px 50px rgba(15, 23, 42, 0.18);
+  /* System */
+  color-scheme: dark;
+
+  /* Typography */
+  --font-display: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Type scale (premium, responsive) */
+  --fs-900: clamp(2.35rem, 3.2vw, 3.35rem);
+  --fs-800: clamp(1.85rem, 2.2vw, 2.45rem);
+  --fs-700: 1.5rem;
+  --fs-600: 1.25rem;
+  --fs-500: 1.05rem;
+  --fs-400: .95rem;
+  --lh-tight: 1.05;
+  --lh-snug: 1.22;
+  --lh-base: 1.55;
+
+  /* Layout */
+  --max-width: 1160px;
+  --gutter: 20px;
+
+  /* Radius */
   --radius-xl: 24px;
   --radius-lg: 18px;
-  --radius-md: 12px;
-  --radius-sm: 8px;
-  --max-width: 1160px;
-  --font-display: "Manrope", "Inter", system-ui, sans-serif;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --dur-1: 140ms;
+  --dur-2: 220ms;
+  --dur-3: 360ms;
+
+  /* Brand palette (OsonTrack 2026) */
+  --color-primary: #7c5cff;          /* brand purple */
+  --color-primary-dark: #5b3fff;
+  --color-cyan: #22d3ee;             /* accent cyan */
+  --color-lime: #11c97f;             /* keep your green as secondary */
+  --color-amber: #fbbf24;
+
+  /* Core colors (Dark default) */
+  --color-bg: #070a12;
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-surface-2: rgba(255, 255, 255, 0.09);
+  --color-ink: rgba(255, 255, 255, 0.92);
+  --color-muted: rgba(255, 255, 255, 0.68);
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-accent: #0b1220;
+
+  /* Premium gradients */
+  --color-gradient: radial-gradient(1000px 520px at 18% 8%, rgba(124, 92, 255, 0.22), transparent 60%),
+                    radial-gradient(900px 520px at 82% 0%, rgba(34, 211, 238, 0.14), transparent 55%),
+                    radial-gradient(900px 600px at 50% 110%, rgba(124, 92, 255, 0.12), transparent 60%),
+                    linear-gradient(180deg, #070a12 0%, #070a12 100%);
+
+  --gradient-brand: linear-gradient(135deg, rgba(124, 92, 255, .98) 0%, rgba(34, 211, 238, .88) 55%, rgba(17, 201, 127, .75) 100%);
+
+  /* Shadows (tuned for glass on dark) */
+  --shadow-soft: 0 14px 34px rgba(0, 0, 0, 0.35);
+  --shadow-strong: 0 24px 70px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 18px 60px rgba(124, 92, 255, 0.22);
+
+  /* Focus ring */
+  --ring: 0 0 0 4px rgba(124, 92, 255, 0.25);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Light mode (auto) */
+@media (prefers-color-scheme: light) {
   :root {
-    --color-bg: #0a0f16;
-    --color-surface: #111827;
-    --color-ink: #f7f8fb;
-    --color-muted: #9aa6b2;
-    --color-border: #1c2733;
-    --color-accent: #0f172a;
+    color-scheme: light;
+
+    --color-bg: #f6f8fc;
+    --color-surface: rgba(255, 255, 255, 0.85);
+    --color-surface-2: rgba(255, 255, 255, 0.92);
+    --color-ink: #0b0f14;
+    --color-muted: #556173;
+    --color-border: rgba(15, 23, 42, 0.10);
+    --color-accent: #0e1b2e;
+
+    --color-gradient: radial-gradient(1000px 520px at 18% 8%, rgba(124, 92, 255, 0.14), transparent 60%),
+                      radial-gradient(900px 520px at 82% 0%, rgba(34, 211, 238, 0.10), transparent 55%),
+                      radial-gradient(900px 600px at 50% 110%, rgba(17, 201, 127, 0.08), transparent 60%),
+                      linear-gradient(180deg, #f6f8fc 0%, #f6f8fc 100%);
+
+    --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
+    --shadow-strong: 0 22px 50px rgba(15, 23, 42, 0.18);
+    --shadow-glow: 0 18px 50px rgba(124, 92, 255, 0.16);
+
+    --ring: 0 0 0 4px rgba(124, 92, 255, 0.18);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 0ms;
+    --dur-2: 0ms;
+    --dur-3: 0ms;
   }
 }
