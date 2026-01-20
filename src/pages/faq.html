@@ -4,91 +4,315 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OsonTrack — FAQ</title>
+
+    <meta
+      name="description"
+      content="OsonTrack FAQ: tariflar, onboarding, migratsiya, xavfsizlik, integratsiyalar va filiallar bo‘yicha tez-tez so‘raladigan savollar."
+    />
+    <meta name="theme-color" content="#070A12" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../assets/css/tokens.css" />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/components.css" />
     <link rel="stylesheet" href="../assets/css/pages.css" />
+
+    <style>
+      /* FAQ page-only micro styles (kept inline to avoid new CSS file) */
+      .faq-wrap { display: grid; grid-template-columns: 1fr 0.9fr; gap: 1.25rem; align-items: start; }
+      @media (max-width: 980px) { .faq-wrap { grid-template-columns: 1fr; } }
+
+      .faq-accordion { display: grid; gap: 0.9rem; }
+
+      details.faq-item {
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--color-border);
+        background: linear-gradient(180deg, var(--color-surface-2), var(--color-surface));
+        box-shadow: var(--shadow-soft);
+        overflow: hidden;
+      }
+
+      details.faq-item > summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 1.05rem 1.15rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.9rem;
+        font-weight: 800;
+      }
+
+      details.faq-item > summary::-webkit-details-marker { display: none; }
+
+      .faq-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: rgba(255,255,255,.06);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+      }
+
+      .faq-chevron {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: rgba(255,255,255,.06);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        transition: transform var(--dur-2) var(--ease);
+      }
+
+      details[open] .faq-chevron { transform: rotate(180deg); }
+
+      .faq-body {
+        padding: 0 1.15rem 1.05rem;
+        color: var(--color-muted);
+        line-height: var(--lh-base);
+      }
+
+      .faq-body p { margin: 0.2rem 0 0; }
+
+      .faq-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+      .faq-tag {
+        display: inline-flex;
+        padding: 0.45rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: rgba(255,255,255,.04);
+        color: var(--color-muted);
+        font-weight: 650;
+        font-size: 0.92rem;
+      }
+    </style>
   </head>
+
   <body>
-    <header class="topbar">
+    <header class="topbar" role="banner">
       <div class="container topbar-inner">
-        <a class="logo" href="../index.html">
+        <a class="logo" href="../index.html" aria-label="OsonTrack bosh sahifa">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
         </a>
-        <nav class="nav" data-nav>
+
+        <nav class="nav" data-nav aria-label="Asosiy menyu">
           <a href="../index.html">Bosh sahifa</a>
           <a href="features.html">Funksiyalar</a>
           <a href="solutions.html">Yechimlar</a>
+          <a href="integrations.html">Integratsiyalar</a>
           <a href="pricing.html">Tariflar</a>
+          <a href="faq.html" aria-current="page">FAQ</a>
           <a href="contact.html">Aloqa</a>
         </nav>
+
         <div class="nav-actions">
-          <button class="mobile-toggle" data-nav-toggle>Menu</button>
+          <button class="mobile-toggle" type="button" data-nav-toggle aria-label="Menyuni ochish/yopish">
+            Menu
+          </button>
           <a class="button button-ghost" href="pricing.html">Demo so‘rash</a>
           <a class="button button-primary" href="contact.html">Sotib olish</a>
         </div>
       </div>
     </header>
 
-    <section class="section">
-      <div class="container">
-        <span class="badge">FAQ</span>
-        <h1 class="section-title">Ko‘p beriladigan savollar</h1>
-        <p class="section-subtitle">
-          OsonTrack platformasi bo‘yicha eng ko‘p so‘raladigan savollarga javoblar.
-        </p>
-        <div class="faq">
-          <div class="faq-item">
-            <h3>OsonTrackni ishga tushirish qancha vaqt oladi?</h3>
-            <p>Odatda 2-3 ish kuni ichida onboarding va sozlash ishlari tugallanadi.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Ma’lumotlarim xavfsizmi?</h3>
-            <p>Ha. Ma’lumotlar shifrlanadi, audit log va rolga asoslangan kirish mavjud.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Tariflar o‘zgaradimi?</h3>
-            <p>Tariflar sizning filiallar soni va integratsiya talablariga qarab moslanadi.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Texnik yordam qanday ishlaydi?</h3>
-            <p>Premium tariflar uchun 24/7 yordam va shaxsiy account manager taqdim etiladi.</p>
+    <main>
+      <!-- Hero -->
+      <section class="section section--tight">
+        <div class="container">
+          <span class="badge badge--glow">FAQ</span>
+          <h1 class="section-title" style="margin-top: 0.8rem;">Savollarga tezkor javoblar</h1>
+          <p class="section-subtitle">
+            Tariflar, onboarding, xavfsizlik va integratsiyalar bo‘yicha eng ko‘p so‘raladigan savollar.
+            Agar savolingiz qolsa — 1 daqiqada bog‘laning.
+          </p>
+
+          <div class="faq-wrap" style="margin-top: 1.25rem;">
+            <!-- Accordion -->
+            <div class="faq-accordion" aria-label="FAQ ro‘yxati">
+              <details class="faq-item" open>
+                <summary>
+                  <span style="display:flex; align-items:center; gap:0.75rem;">
+                    <span class="faq-icon">₮</span>
+                    Tariflar oylikmi yoki yillikmi? Chegirma bormi?
+                  </span>
+                  <span class="faq-chevron">⌄</span>
+                </summary>
+                <div class="faq-body">
+                  <p>
+                    Siz oylik yoki yillik to‘lovni tanlashingiz mumkin. Yillik to‘lovda -15% chegirma avtomatik qo‘llanadi.
+                    Pricing sahifasida toggle orqali narxlar dinamik ko‘rsatiladi.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span style="display:flex; align-items:center; gap:0.75rem;">
+                    <span class="faq-icon">⚡</span>
+                    Onboarding qancha vaqt oladi?
+                  </span>
+                  <span class="faq-chevron">⌄</span>
+                </summary>
+                <div class="faq-body">
+                  <p>
+                    Odatda 48 soat ichida asosiy sozlash va onboardingni boshlaymiz. Filiallar soni va integratsiyalarga qarab
+                    yakuniy muddat kelishiladi.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span style="display:flex; align-items:center; gap:0.75rem;">
+                    <span class="faq-icon">⟲</span>
+                    Eski tizimdan ma’lumotlarni ko‘chirish mumkinmi?
+                  </span>
+                  <span class="faq-chevron">⌄</span>
+                </summary>
+                <div class="faq-body">
+                  <p>
+                    Ha. Excel/CSV orqali yoki mavjud tizimingizdan eksport qilingan ma’lumotlar asosida migratsiya qilamiz.
+                    Mijozlar, mahsulotlar, qoldiq, qarzdorlik kabi bo‘limlar alohida tekshiruvdan o‘tadi.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span style="display:flex; align-items:center; gap:0.75rem;">
+                    <span class="faq-icon">🔒</span>
+                    Xavfsizlik va rollar qanday ishlaydi?
+                  </span>
+                  <span class="faq-chevron">⌄</span>
+                </summary>
+                <div class="faq-body">
+                  <p>
+                    Har bir xodim roli bo‘yicha ruxsatlar beriladi (kassir, omborchi, menejer, admin). Muhim harakatlar audit log’da
+                    qayd etiladi. Kirishlar xavfsiz sessiyalar orqali boshqariladi.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span style="display:flex; align-items:center; gap:0.75rem;">
+                    <span class="faq-icon">🔗</span>
+                    Qanday integratsiyalar mavjud?
+                  </span>
+                  <span class="faq-chevron">⌄</span>
+                </summary>
+                <div class="faq-body">
+                  <p>
+                    Telegram bildirishnomalari, POS jarayonlari va biznes ehtiyojiga qarab API/1C kabi integratsiyalar.
+                    Detallarni “Integratsiyalar” sahifasida ko‘rishingiz mumkin.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary>
+                  <span style="display:flex; align-items:center; gap:0.75rem;">
+                    <span class="faq-icon">🏬</span>
+                    Filiallar ko‘payib ketsa tarifni o‘zgartira olamanmi?
+                  </span>
+                  <span class="faq-chevron">⌄</span>
+                </summary>
+                <div class="faq-body">
+                  <p>
+                    Ha. Biznesingiz o‘sgan sari tarifni yangilash mumkin. Pro paketda 3 filialgacha, Business paketda filiallar cheksiz.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <!-- Side card -->
+            <aside class="card card--elevated">
+              <h3 style="margin:0 0 0.35rem;">Tezkor aloqa</h3>
+              <p class="muted" style="margin:0;">
+                Savolingiz bormi? Biz 24 soat ichida javob beramiz va mos konfiguratsiyani tavsiya qilamiz.
+              </p>
+
+              <div class="faq-tags">
+                <span class="faq-tag">Demo</span>
+                <span class="faq-tag">Onboarding</span>
+                <span class="faq-tag">Migratsiya</span>
+                <span class="faq-tag">Integratsiya</span>
+              </div>
+
+              <div class="card-actions">
+                <a class="button button-primary button-block" href="contact.html">Bog‘lanish</a>
+                <a class="button button-ghost button-block" href="pricing.html">Tariflar</a>
+              </div>
+            </aside>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer class="footer">
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta cta--premium">
+            <div>
+              <h2>Javob topilmadimi?</h2>
+              <p class="muted">Biz sizga mos yechimni tanlashda yordam beramiz. Demo va individual taklif tayyorlab beramiz.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="contact.html">Demo so‘rash</a>
+              <a class="button button-ghost" href="features.html">Funksiyalar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
       <div class="container footer-grid">
-        <div>
+        <div class="footer-brand">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
-          <p>SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
+          <p class="muted">SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
         </div>
         <div>
           <h4>Mahsulot</h4>
           <a href="features.html">Funksiyalar</a><br />
           <a href="solutions.html">Yechimlar</a><br />
-          <a href="pricing.html">Tariflar</a>
+          <a href="integrations.html">Integratsiyalar</a><br />
+          <a href="pricing.html">Tariflar</a><br />
+          <a href="faq.html">FAQ</a>
         </div>
         <div>
           <h4>Kompaniya</h4>
           <a href="about.html">Biz haqimizda</a><br />
-          <a href="contact.html">Aloqa</a>
+          <a href="contact.html">Aloqa</a><br />
+          <a href="privacy.html">Maxfiylik</a><br />
+          <a href="terms.html">Shartlar</a>
         </div>
         <div>
           <h4>Aloqa</h4>
-          <p>+998 90 000 00 00</p>
-          <p>hello@osontrack.uz</p>
+          <p class="muted">+998 90 000 00 00</p>
+          <p class="muted">hello@osontrack.uz</p>
         </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="y"></span> OsonTrack. Barcha huquqlar himoyalangan.</span>
       </div>
     </footer>
 
     <script src="../assets/js/app.js"></script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
