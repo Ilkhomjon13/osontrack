@@ -4,100 +4,251 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OsonTrack — Biz haqimizda</title>
+
+    <meta
+      name="description"
+      content="OsonTrack — SRM do‘konlar uchun premium boshqaruv platformasi. Missiya, qadriyatlar, jamoa va yondashuvimiz."
+    />
+    <meta name="theme-color" content="#070A12" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../assets/css/tokens.css" />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/components.css" />
     <link rel="stylesheet" href="../assets/css/pages.css" />
+
+    <style>
+      /* about page micro styles (inline, no new file) */
+      .split { display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.25rem; align-items: start; }
+      @media (max-width: 980px) { .split { grid-template-columns: 1fr; } }
+
+      .timeline { display:grid; gap: 0.9rem; }
+      .timeline .step {
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--color-border);
+        background: rgba(255,255,255,.04);
+        box-shadow: var(--shadow-soft);
+        padding: 1.05rem 1.1rem;
+      }
+      .step .k { font-size: 0.78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted); }
+      .step h4 { margin: 0.35rem 0 0.25rem; }
+      .step p { margin: 0; color: var(--color-muted); }
+    </style>
   </head>
+
   <body>
-    <header class="topbar">
+    <header class="topbar" role="banner">
       <div class="container topbar-inner">
-        <a class="logo" href="../index.html">
+        <a class="logo" href="../index.html" aria-label="OsonTrack bosh sahifa">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
         </a>
-        <nav class="nav" data-nav>
+
+        <nav class="nav" data-nav aria-label="Asosiy menyu">
           <a href="../index.html">Bosh sahifa</a>
           <a href="features.html">Funksiyalar</a>
           <a href="solutions.html">Yechimlar</a>
+          <a href="integrations.html">Integratsiyalar</a>
           <a href="pricing.html">Tariflar</a>
+          <a href="faq.html">FAQ</a>
+          <a href="about.html" aria-current="page">Biz haqimizda</a>
           <a href="contact.html">Aloqa</a>
         </nav>
+
         <div class="nav-actions">
-          <button class="mobile-toggle" data-nav-toggle>Menu</button>
+          <button class="mobile-toggle" type="button" data-nav-toggle aria-label="Menyuni ochish/yopish">
+            Menu
+          </button>
           <a class="button button-ghost" href="pricing.html">Demo so‘rash</a>
           <a class="button button-primary" href="contact.html">Sotib olish</a>
         </div>
       </div>
     </header>
 
-    <section class="section">
-      <div class="container">
-        <span class="badge">Biz haqimizda</span>
-        <h1 class="section-title">OsonTrack — SRM do‘konlarining ishonchli hamkori.</h1>
-        <p class="section-subtitle">
-          Bizning missiyamiz — savdo va hisob-kitob jarayonlarini soddalashtirib, do‘konlar
-          samaradorligini oshirish.
-        </p>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Missiya</h3>
-            <p>SRM do‘konlarini raqamlashtirish va samaradorlikni 2 barobar oshirish.</p>
-          </div>
-          <div class="card">
-            <h3>Qadriyatlar</h3>
-            <p>Halollik, barqarorlik, premium xizmat va natija uchun ishlash.</p>
-          </div>
-          <div class="card">
-            <h3>Jamoa</h3>
-            <p>Fintech va retail sohasida tajribali ekspertlar bilan ishlaymiz.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main>
+      <!-- Hero -->
+      <section class="hero hero--aurora">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="badge badge--glow">Biz haqimizda</span>
+            <h1 class="hero-title">OsonTrack — SRM do‘konlarining ishonchli hamkori.</h1>
+            <p class="hero-lead">
+              Bizning missiyamiz — savdo va hisob-kitob jarayonlarini soddalashtirish, nazoratni kuchaytirish
+              va do‘konlar samaradorligini oshirish. OsonTrack: tez, xavfsiz va premium tajriba.
+            </p>
 
-    <section class="section">
-      <div class="container cta">
-        <div>
-          <h2>OsonTrack bilan hamkorlikni boshlang.</h2>
-          <p>Biz sizga mos strategiyani tayyorlab, jarayonni tezlashtiramiz.</p>
-        </div>
-        <div>
-          <a class="button button-primary" href="contact.html">Bog‘lanish</a>
-        </div>
-      </div>
-    </section>
+            <div class="hero-actions">
+              <a class="button button-primary" href="contact.html">Bog‘lanish</a>
+              <a class="button button-ghost" href="features.html">Funksiyalar</a>
+            </div>
 
-    <footer class="footer">
+            <div class="hero-trust" style="margin-top: 1rem;">
+              <span class="trust-pill">48 soatda onboarding</span>
+              <span class="trust-pill">Rolga asoslangan kirish</span>
+              <span class="trust-pill">Real vaqt KPI</span>
+              <span class="trust-pill">Eksport: Excel/PDF</span>
+            </div>
+          </div>
+
+          <aside class="card card--elevated">
+            <h3 style="margin:0 0 0.35rem;">Bizning va’damiz</h3>
+            <p class="muted" style="margin:0;">
+              OsonTrack’ni ulash — “qo‘shimcha ish” emas. Biz jarayonni soddalashtiramiz va jamoangizni tez ishga tushiramiz.
+            </p>
+
+            <ul class="list-check" style="margin-top: 1rem;">
+              <li>Tez start: sozlash + onboarding</li>
+              <li>Audit log va rollar</li>
+              <li>Hisobotlar va analitika</li>
+              <li>Yordam: 24/7 monitoring</li>
+            </ul>
+
+            <div class="card-actions">
+              <a class="button button-primary button-block" href="pricing.html">Tariflar</a>
+              <a class="button button-ghost button-block" href="faq.html">FAQ</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Mission / Values / Team -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Qadriyatlar va yondashuv</h2>
+            <p class="section-subtitle">
+              Biz “feature” emas, natija sotamiz: tezroq operatsiya, aniq hisobot va boshqaruv nazorati.
+            </p>
+          </div>
+
+          <div class="card-grid card-grid--premium">
+            <article class="card card--hover">
+              <h3>Missiya</h3>
+              <p>SRM do‘konlarini raqamlashtirish va samaradorlikni oshirish uchun oddiy va kuchli tizim yaratish.</p>
+              <ul class="list-check">
+                <li>Jarayonlarni soddalashtirish</li>
+                <li>Tezkor qarorlar</li>
+                <li>Barqaror o‘sish</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <h3>Qadriyatlar</h3>
+              <p>Halollik, barqarorlik, premium xizmat va natija uchun ishlash — bizning standart.</p>
+              <ul class="list-check">
+                <li>Transparent hamkorlik</li>
+                <li>Mas’uliyat</li>
+                <li>Yuqori servis</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <h3>Jamoa</h3>
+              <p>Retail va fintech tajribasiga ega ekspertlar. Operatsion muammolarni “ichidan” bilamiz.</p>
+              <ul class="list-check">
+                <li>Retail jarayonlar</li>
+                <li>Analitika</li>
+                <li>Xavfsizlik</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How we work -->
+      <section class="section">
+        <div class="container split">
+          <div class="highlight-panel highlight-panel--premium">
+            <span class="badge badge--glow">Jarayon</span>
+            <h2 class="section-title" style="margin-top: 0.8rem;">Biz qanday ishlaymiz?</h2>
+            <p class="section-subtitle">
+              Maqsad — qisqa muddatda ishga tushirish va keyin biznes o‘sishi uchun “tizim” bo‘lib qolish.
+            </p>
+            <ul class="list-check">
+              <li>Demo va ehtiyojlarni aniqlash</li>
+              <li>Sozlash, migratsiya va onboarding</li>
+              <li>KPI, hisobotlar va doimiy qo‘llab-quvvatlash</li>
+            </ul>
+          </div>
+
+          <div class="timeline" aria-label="Bosqichlar">
+            <div class="step">
+              <div class="k">1-bosqich</div>
+              <h4>Audit va konfiguratsiya</h4>
+              <p>Do‘kon jarayonlaringizni tahlil qilamiz va mos modullarni tanlaymiz.</p>
+            </div>
+            <div class="step">
+              <div class="k">2-bosqich</div>
+              <h4>Onboarding va migratsiya</h4>
+              <p>Ma’lumotlarni ko‘chiramiz, xodimlar rollarini sozlaymiz, jamoani o‘qitamiz.</p>
+            </div>
+            <div class="step">
+              <div class="k">3-bosqich</div>
+              <h4>Nazorat va o‘sish</h4>
+              <p>Analitika orqali qarorlar tezlashadi: foyda, xarajat, filial kesimi va KPI.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta cta--premium">
+            <div>
+              <h2>OsonTrack bilan hamkorlikni boshlang.</h2>
+              <p class="muted">Biz sizga mos strategiyani tayyorlab, jarayonni tezlashtiramiz.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="contact.html">Bog‘lanish</a>
+              <a class="button button-ghost" href="pricing.html">Tariflar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
       <div class="container footer-grid">
-        <div>
+        <div class="footer-brand">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
-          <p>SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
+          <p class="muted">SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
         </div>
         <div>
           <h4>Mahsulot</h4>
           <a href="features.html">Funksiyalar</a><br />
           <a href="solutions.html">Yechimlar</a><br />
-          <a href="pricing.html">Tariflar</a>
+          <a href="integrations.html">Integratsiyalar</a><br />
+          <a href="pricing.html">Tariflar</a><br />
+          <a href="faq.html">FAQ</a>
         </div>
         <div>
           <h4>Kompaniya</h4>
           <a href="about.html">Biz haqimizda</a><br />
-          <a href="contact.html">Aloqa</a>
+          <a href="contact.html">Aloqa</a><br />
+          <a href="privacy.html">Maxfiylik</a><br />
+          <a href="terms.html">Shartlar</a>
         </div>
         <div>
           <h4>Aloqa</h4>
-          <p>+998 90 000 00 00</p>
-          <p>hello@osontrack.uz</p>
+          <p class="muted">+998 90 000 00 00</p>
+          <p class="muted">hello@osontrack.uz</p>
         </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="y"></span> OsonTrack. Barcha huquqlar himoyalangan.</span>
       </div>
     </footer>
 
     <script src="../assets/js/app.js"></script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
