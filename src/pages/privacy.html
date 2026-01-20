@@ -4,83 +4,281 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OsonTrack — Maxfiylik siyosati</title>
+
+    <meta
+      name="description"
+      content="OsonTrack maxfiylik siyosati: qanday ma’lumotlar yig‘iladi, nima uchun ishlatiladi, saqlash muddatlari, xavfsizlik va foydalanuvchi huquqlari."
+    />
+    <meta name="theme-color" content="#070A12" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../assets/css/tokens.css" />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/components.css" />
     <link rel="stylesheet" href="../assets/css/pages.css" />
+
+    <style>
+      /* privacy micro styles */
+      .legal-wrap { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 1.25rem; align-items: start; }
+      @media (max-width: 980px) { .legal-wrap { grid-template-columns: 1fr; } }
+
+      .toc {
+        position: sticky;
+        top: 96px;
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--color-border);
+        background: rgba(255,255,255,.04);
+        box-shadow: var(--shadow-soft);
+        padding: 1.1rem;
+      }
+      .toc h3 { margin: 0 0 0.6rem; }
+      .toc a {
+        display: block;
+        padding: 0.55rem 0.65rem;
+        border-radius: 12px;
+        color: var(--color-muted);
+        font-weight: 700;
+      }
+      .toc a:hover { background: rgba(255,255,255,.06); color: var(--color-ink); }
+
+      .legal-card { border-radius: var(--radius-xl); border: 1px solid var(--color-border); background: rgba(255,255,255,.04); box-shadow: var(--shadow-soft); padding: 1.35rem; }
+      .legal-card h2 { margin: 0 0 0.5rem; font-size: 1.3rem; }
+      .legal-card p { margin: 0.5rem 0 0; color: var(--color-muted); }
+      .legal-card ul { margin: 0.6rem 0 0; padding-left: 1.2rem; color: var(--color-muted); }
+      .legal-card li { margin: 0.25rem 0; }
+
+      .meta-row { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top: 0.75rem; }
+      .meta-pill {
+        display:inline-flex;
+        padding: 0.45rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: rgba(255,255,255,.04);
+        color: var(--color-muted);
+        font-weight: 750;
+        font-size: 0.92rem;
+      }
+    </style>
   </head>
+
   <body>
-    <header class="topbar">
+    <header class="topbar" role="banner">
       <div class="container topbar-inner">
-        <a class="logo" href="../index.html">
+        <a class="logo" href="../index.html" aria-label="OsonTrack bosh sahifa">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
         </a>
-        <nav class="nav" data-nav>
+
+        <nav class="nav" data-nav aria-label="Asosiy menyu">
           <a href="../index.html">Bosh sahifa</a>
           <a href="features.html">Funksiyalar</a>
           <a href="solutions.html">Yechimlar</a>
+          <a href="integrations.html">Integratsiyalar</a>
           <a href="pricing.html">Tariflar</a>
+          <a href="faq.html">FAQ</a>
           <a href="contact.html">Aloqa</a>
+          <a href="privacy.html" aria-current="page">Maxfiylik</a>
         </nav>
+
         <div class="nav-actions">
-          <button class="mobile-toggle" data-nav-toggle>Menu</button>
+          <button class="mobile-toggle" type="button" data-nav-toggle aria-label="Menyuni ochish/yopish">
+            Menu
+          </button>
           <a class="button button-ghost" href="pricing.html">Demo so‘rash</a>
           <a class="button button-primary" href="contact.html">Sotib olish</a>
         </div>
       </div>
     </header>
 
-    <section class="section">
-      <div class="container">
-        <span class="badge">Maxfiylik</span>
-        <h1 class="section-title">Maxfiylik siyosati</h1>
-        <p class="section-subtitle">
-          OsonTrack foydalanuvchilar ma’lumotlarini himoya qilishga alohida e’tibor beradi.
-        </p>
-        <div class="card">
-          <p>
-            Biz faqat xizmat ko‘rsatish uchun zarur ma’lumotlarni yig‘amiz va ularni
-            shifrlangan holda saqlaymiz. Ma’lumotlar uchinchi shaxslarga berilmaydi va
-            barcha jarayonlar lokal qonunchilik talablariga mos yuritiladi.
+    <main>
+      <!-- Header -->
+      <section class="section section--tight">
+        <div class="container">
+          <span class="badge badge--glow">Maxfiylik</span>
+          <h1 class="section-title" style="margin-top: 0.8rem;">Maxfiylik siyosati</h1>
+          <p class="section-subtitle">
+            OsonTrack foydalanuvchi ma’lumotlarini himoya qilishga alohida e’tibor beradi. Ushbu hujjat
+            sizning ma’lumotlaringiz qanday yig‘ilishi, ishlatilishi va himoyalanishini tushuntiradi.
           </p>
-          <p>
-            Savollar bo‘lsa, iltimos <a href="contact.html">biz bilan bog‘laning</a>.
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <footer class="footer">
+          <div class="meta-row">
+            <span class="meta-pill">Oxirgi yangilanish: <strong style="margin-left: 6px;">2026-01-20</strong></span>
+            <span class="meta-pill">Aloqa: <strong style="margin-left: 6px;">hello@osontrack.uz</strong></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content -->
+      <section class="section">
+        <div class="container legal-wrap">
+          <!-- TOC -->
+          <aside class="toc" aria-label="Bo‘limlar">
+            <h3>Bo‘limlar</h3>
+            <a href="#scope">1) Qamrov</a>
+            <a href="#data">2) Qanday ma’lumotlar yig‘iladi</a>
+            <a href="#use">3) Ma’lumotdan foydalanish maqsadlari</a>
+            <a href="#share">4) Uchinchi tomonlar va ulashish</a>
+            <a href="#security">5) Xavfsizlik</a>
+            <a href="#retention">6) Saqlash muddati</a>
+            <a href="#rights">7) Foydalanuvchi huquqlari</a>
+            <a href="#cookies">8) Cookie va analitika</a>
+            <a href="#contact">9) Aloqa</a>
+          </aside>
+
+          <!-- Sections -->
+          <div style="display:grid; gap: 1rem;">
+            <section id="scope" class="legal-card">
+              <h2>1) Qamrov</h2>
+              <p>
+                Ushbu siyosat OsonTrack veb-sayti va platformasidan foydalanishda yig‘iladigan ma’lumotlarga taalluqlidir.
+                Agar siz uchinchi tomon servislaridan (masalan, Telegram) foydalansangiz, ularning siyosati ham qo‘llanadi.
+              </p>
+            </section>
+
+            <section id="data" class="legal-card">
+              <h2>2) Qanday ma’lumotlar yig‘iladi</h2>
+              <p>Biz quyidagi turdagi ma’lumotlarni yig‘ishimiz mumkin:</p>
+              <ul>
+                <li><strong>Kontakt ma’lumotlari:</strong> ism, email, telefon (demo/aloqa so‘rovlari uchun).</li>
+                <li><strong>Hisob ma’lumotlari:</strong> login, rol, ruxsatlar (platformadan foydalanish uchun).</li>
+                <li><strong>Operatsion ma’lumotlar:</strong> savdo, ombor, filiallar bo‘yicha ko‘rsatkichlar (xizmatni ta’minlash uchun).</li>
+                <li><strong>Texnik ma’lumotlar:</strong> IP, brauzer turi, loglar (xavfsizlik va diagnostika uchun).</li>
+              </ul>
+            </section>
+
+            <section id="use" class="legal-card">
+              <h2>3) Ma’lumotdan foydalanish maqsadlari</h2>
+              <ul>
+                <li>Xizmatni ko‘rsatish, sozlash va texnik yordam berish.</li>
+                <li>Hisobotlar, analitika va funksiyalarni to‘g‘ri ishlashini ta’minlash.</li>
+                <li>Xavfsizlik monitoringi, firibgarlikning oldini olish.</li>
+                <li>So‘rovlaringizga javob berish (demo, tarif, integratsiya).</li>
+              </ul>
+            </section>
+
+            <section id="share" class="legal-card">
+              <h2>4) Uchinchi tomonlar va ulashish</h2>
+              <p>
+                Biz ma’lumotlaringizni sotmaymiz. Quyidagi holatlarda cheklangan ulashish bo‘lishi mumkin:
+              </p>
+              <ul>
+                <li><strong>Xizmat provayderlari:</strong> hosting, email yuborish, monitoring (faqat kerakli darajada).</li>
+                <li><strong>Qonuniy talablar:</strong> amaldagi qonunchilik doirasida so‘rov bo‘lsa.</li>
+                <li><strong>Integratsiyalar:</strong> siz yoqqan integratsiyalar bo‘yicha ma’lumot almashinuvi.</li>
+              </ul>
+            </section>
+
+            <section id="security" class="legal-card">
+              <h2>5) Xavfsizlik</h2>
+              <p>
+                Biz xavfsizlikni qat’iy nazorat qilamiz: ruxsatlar, audit log, shifrlash va monitoring.
+                Shunga qaramay, internet orqali uzatish 100% kafolatlanmaydi.
+              </p>
+              <ul>
+                <li>Rolga asoslangan kirish (RBAC)</li>
+                <li>Audit log va muhim harakatlarni qayd etish</li>
+                <li>Ma’lumotlarni himoyalash (saqlash/uzatish paytida)</li>
+                <li>Doimiy monitoring va yangilash</li>
+              </ul>
+            </section>
+
+            <section id="retention" class="legal-card">
+              <h2>6) Saqlash muddati</h2>
+              <p>
+                Ma’lumotlar xizmat ko‘rsatish uchun zarur bo‘lgan muddat davomida saqlanadi.
+                Shartnoma tugagach yoki hisob yopilgach, ma’lumotlar qonunchilik va biznes ehtiyojlariga mos ravishda
+                o‘chirilib yoki anonimlashtirilishi mumkin.
+              </p>
+            </section>
+
+            <section id="rights" class="legal-card">
+              <h2>7) Foydalanuvchi huquqlari</h2>
+              <p>Siz quyidagilarni so‘rashingiz mumkin:</p>
+              <ul>
+                <li>Ma’lumotlaringizga kirish va nusxasini olish</li>
+                <li>To‘g‘rilash yoki yangilash</li>
+                <li>O‘chirish (qonuniy cheklovlar bo‘lsa, tushuntiriladi)</li>
+                <li>Qayta ishlashni cheklash / rad etish</li>
+              </ul>
+            </section>
+
+            <section id="cookies" class="legal-card">
+              <h2>8) Cookie va analitika</h2>
+              <p>
+                Biz sayt ishlashi va tajribani yaxshilash uchun cookie’dan foydalanishimiz mumkin.
+                Analitika vositalari qo‘llansa, ular anonim ko‘rsatkichlarni yig‘ishi mumkin.
+              </p>
+            </section>
+
+            <section id="contact" class="legal-card">
+              <h2>9) Aloqa</h2>
+              <p>
+                Maxfiylik bo‘yicha savollar bo‘lsa, <a href="contact.html" style="text-decoration: underline;">aloqa sahifasi</a>
+                orqali yozing yoki <strong>hello@osontrack.uz</strong> emailiga murojaat qiling.
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta cta--premium">
+            <div>
+              <h2>Qo‘shimcha savollar bormi?</h2>
+              <p class="muted">Biz maxfiylik va xavfsizlik bo‘yicha ham tushuntirib beramiz.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="contact.html">Bog‘lanish</a>
+              <a class="button button-ghost" href="faq.html">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
       <div class="container footer-grid">
-        <div>
+        <div class="footer-brand">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
-          <p>SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
+          <p class="muted">SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
         </div>
         <div>
           <h4>Mahsulot</h4>
           <a href="features.html">Funksiyalar</a><br />
           <a href="solutions.html">Yechimlar</a><br />
-          <a href="pricing.html">Tariflar</a>
+          <a href="integrations.html">Integratsiyalar</a><br />
+          <a href="pricing.html">Tariflar</a><br />
+          <a href="faq.html">FAQ</a>
         </div>
         <div>
           <h4>Kompaniya</h4>
           <a href="about.html">Biz haqimizda</a><br />
-          <a href="contact.html">Aloqa</a>
+          <a href="contact.html">Aloqa</a><br />
+          <a href="privacy.html">Maxfiylik</a><br />
+          <a href="terms.html">Shartlar</a>
         </div>
         <div>
           <h4>Aloqa</h4>
-          <p>+998 90 000 00 00</p>
-          <p>hello@osontrack.uz</p>
+          <p class="muted">+998 90 000 00 00</p>
+          <p class="muted">hello@osontrack.uz</p>
         </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="y"></span> OsonTrack. Barcha huquqlar himoyalangan.</span>
       </div>
     </footer>
 
     <script src="../assets/js/app.js"></script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
