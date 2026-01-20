@@ -4,135 +4,275 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OsonTrack — Tariflar</title>
+    <meta
+      name="description"
+      content="OsonTrack tariflari: oylik yoki yillik to‘lov. SRM do‘konlar uchun Start, Pro va Business paketlar."
+    />
+    <meta name="theme-color" content="#070A12" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../assets/css/tokens.css" />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/components.css" />
     <link rel="stylesheet" href="../assets/css/pages.css" />
   </head>
+
   <body>
-    <header class="topbar">
+    <header class="topbar" role="banner">
       <div class="container topbar-inner">
-        <a class="logo" href="../index.html">
+        <a class="logo" href="../index.html" aria-label="OsonTrack bosh sahifa">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
         </a>
-        <nav class="nav" data-nav>
+
+        <nav class="nav" data-nav aria-label="Asosiy menyu">
           <a href="../index.html">Bosh sahifa</a>
           <a href="features.html">Funksiyalar</a>
           <a href="solutions.html">Yechimlar</a>
-          <a href="pricing.html">Tariflar</a>
+          <a href="integrations.html">Integratsiyalar</a>
+          <a href="pricing.html" aria-current="page">Tariflar</a>
           <a href="contact.html">Aloqa</a>
         </nav>
+
         <div class="nav-actions">
-          <button class="mobile-toggle" data-nav-toggle>Menu</button>
+          <button class="mobile-toggle" type="button" data-nav-toggle aria-label="Menyuni ochish/yopish">
+            Menu
+          </button>
           <a class="button button-ghost" href="pricing.html">Demo so‘rash</a>
           <a class="button button-primary" href="contact.html">Sotib olish</a>
         </div>
       </div>
     </header>
 
-    <section class="section">
-      <div class="container">
-        <span class="badge">Tariflar</span>
-        <h1 class="section-title">Har bir SRM do‘koni uchun mos paket.</h1>
-        <p class="section-subtitle">
-          Oylik yoki yillik to‘lovni tanlang va OsonTrack platformasini to‘liq imkoniyatlari
-          bilan ishlating.
-        </p>
-        <div class="pricing-toggle" aria-label="Tariflarni tanlash">
-          <button class="active" data-pricing-toggle="monthly">Oylik</button>
-          <button data-pricing-toggle="yearly">Yillik -15%</button>
-        </div>
-        <div class="card-grid" style="margin-top: 2.5rem;">
-          <div class="price-card">
-            <span class="tag">Start</span>
-            <h3>Yangi do‘konlar uchun</h3>
-            <p class="price" data-price data-monthly="1 200 000 so‘m" data-yearly="12 240 000 so‘m">
-              1 200 000 so‘m
+    <main>
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <span class="badge badge--glow">Tariflar</span>
+            <h1 class="section-title" style="margin-top: 0.8rem;">
+              Har bir SRM do‘koni uchun mos paket.
+            </h1>
+            <p class="section-subtitle">
+              Oylik yoki yillik to‘lovni tanlang. Yillik to‘lovda <strong>-15%</strong> chegirma.
+              OsonTrack platformasini to‘liq imkoniyatlari bilan ishlating.
             </p>
-            <ul>
-              <li>1 filial</li>
-              <li>Chek va savdo boshqaruvi</li>
-              <li>Ombor monitoringi</li>
-              <li>Standart hisobotlar</li>
-            </ul>
-            <a class="button button-ghost" href="contact.html">Boshlash</a>
-          </div>
-          <div class="price-card highlight">
-            <span class="tag">Pro</span>
-            <h3>Premium imkoniyatlar</h3>
-            <p class="price" data-price data-monthly="2 400 000 so‘m" data-yearly="24 480 000 so‘m">
-              2 400 000 so‘m
-            </p>
-            <ul>
-              <li>3 filialgacha</li>
-              <li>CRM & bonuslar</li>
-              <li>Moliyaviy tahlil</li>
-              <li>Telegram bildirishnomalari</li>
-            </ul>
-            <a class="button button-primary" href="contact.html">Eng ommabop</a>
-          </div>
-          <div class="price-card">
-            <span class="tag">Business</span>
-            <h3>Yirik tarmoqlar uchun</h3>
-            <p class="price" data-price data-monthly="4 800 000 so‘m" data-yearly="48 960 000 so‘m">
-              4 800 000 so‘m
-            </p>
-            <ul>
-              <li>Cheksiz filial</li>
-              <li>Personal manager</li>
-              <li>Integratsiyalar (1C, API)</li>
-              <li>Custom analitika</li>
-            </ul>
-            <a class="button button-ghost" href="contact.html">Konsultatsiya</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container cta">
-        <div>
-          <h2>Tariflar bo‘yicha individual taklif olmoqchimisiz?</h2>
-          <p>Jamoamiz 24 soat ichida sizga optimal variantni taklif qiladi.</p>
-        </div>
-        <div>
-          <a class="button button-primary" href="contact.html">Bog‘lanish</a>
-        </div>
-      </div>
-    </section>
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+              <div class="pricing-toggle" aria-label="Tariflarni tanlash">
+                <button class="active" data-pricing-toggle="monthly" type="button">Oylik</button>
+                <button data-pricing-toggle="yearly" type="button">Yillik -15%</button>
+              </div>
+              <span class="trust-pill">Onboarding</span>
+              <span class="trust-pill">Texnik yordam</span>
+              <span class="trust-pill">Xavfsiz kirish</span>
+            </div>
+          </div>
 
-    <footer class="footer">
+          <div class="card-grid" style="margin-top: 2.2rem;">
+            <!-- START -->
+            <article class="price-card">
+              <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+                <div>
+                  <span class="tag">Start</span>
+                  <h3 style="margin: 0.4rem 0 0.35rem;">Yangi do‘konlar uchun</h3>
+                  <p class="muted" style="margin: 0;">Asosiy modul’lar, tez start.</p>
+                </div>
+                <span class="badge badge--success">Yengil</span>
+              </div>
+
+              <p
+                class="price"
+                data-price
+                data-monthly="1 200 000 so‘m"
+                data-yearly="12 240 000 so‘m"
+                style="margin: 1.1rem 0 0.2rem;"
+              >
+                1 200 000 so‘m
+              </p>
+              <div class="muted" style="margin-bottom: 1rem;">oyiga / filial</div>
+
+              <ul class="list-check" style="margin-top: 0;">
+                <li>1 filial</li>
+                <li>Chek va savdo boshqaruvi</li>
+                <li>Ombor monitoringi</li>
+                <li>Standart hisobotlar</li>
+              </ul>
+
+              <div style="margin-top: 1.25rem;">
+                <a class="button button-ghost button-block" href="contact.html">Boshlash</a>
+              </div>
+            </article>
+
+            <!-- PRO (highlight) -->
+            <article class="price-card highlight" aria-label="Eng ommabop tarif">
+              <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+                <div>
+                  <span class="tag">Pro</span>
+                  <h3 style="margin: 0.4rem 0 0.35rem;">Premium imkoniyatlar</h3>
+                  <p class="muted" style="margin: 0;">Eng yaxshi balans: tezlik + analitika.</p>
+                </div>
+                <span class="badge badge--glow">Eng ommabop</span>
+              </div>
+
+              <p
+                class="price"
+                data-price
+                data-monthly="2 400 000 so‘m"
+                data-yearly="24 480 000 so‘m"
+                style="margin: 1.1rem 0 0.2rem;"
+              >
+                2 400 000 so‘m
+              </p>
+              <div class="muted" style="margin-bottom: 1rem;">oyiga / 3 filialgacha</div>
+
+              <ul class="list-check" style="margin-top: 0;">
+                <li>3 filialgacha</li>
+                <li>CRM &amp; bonuslar</li>
+                <li>Moliyaviy tahlil</li>
+                <li>Telegram bildirishnomalari</li>
+              </ul>
+
+              <div style="margin-top: 1.25rem;">
+                <a class="button button-primary button-block" href="contact.html">Boshlash</a>
+              </div>
+
+              <div style="margin-top: 0.85rem; display:flex; gap:10px; flex-wrap:wrap;">
+                <span class="trust-pill">Rolga asoslangan kirish</span>
+                <span class="trust-pill">Tez hisobotlar</span>
+              </div>
+            </article>
+
+            <!-- BUSINESS -->
+            <article class="price-card">
+              <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+                <div>
+                  <span class="tag">Business</span>
+                  <h3 style="margin: 0.4rem 0 0.35rem;">Yirik tarmoqlar uchun</h3>
+                  <p class="muted" style="margin: 0;">Integratsiya va custom analitika.</p>
+                </div>
+                <span class="badge badge--muted">Enterprise</span>
+              </div>
+
+              <p
+                class="price"
+                data-price
+                data-monthly="4 800 000 so‘m"
+                data-yearly="48 960 000 so‘m"
+                style="margin: 1.1rem 0 0.2rem;"
+              >
+                4 800 000 so‘m
+              </p>
+              <div class="muted" style="margin-bottom: 1rem;">oyiga / cheksiz filial</div>
+
+              <ul class="list-check" style="margin-top: 0;">
+                <li>Cheksiz filial</li>
+                <li>Personal manager</li>
+                <li>Integratsiyalar (1C, API)</li>
+                <li>Custom analitika</li>
+              </ul>
+
+              <div style="margin-top: 1.25rem;">
+                <a class="button button-ghost button-block" href="contact.html">Konsultatsiya</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Small note -->
+          <div class="card" style="margin-top: 1.2rem; padding: 1.25rem;">
+            <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+              <div>
+                <div style="font-weight:800; margin-bottom: 0.25rem;">To‘lov va ulanish</div>
+                <div class="muted">Tariflar do‘kon modeliga qarab moslashtiriladi. Migratsiya va onboarding kiritilgan.</div>
+              </div>
+              <a class="button button-primary button-sm" href="contact.html">Savol berish</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta cta--premium">
+            <div>
+              <h2>Tariflar bo‘yicha individual taklif olmoqchimisiz?</h2>
+              <p class="muted">Jamoamiz 24 soat ichida sizga optimal variantni taklif qiladi.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="contact.html">Bog‘lanish</a>
+              <a class="button button-ghost" href="faq.html">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mini FAQ (pricing conversion booster) -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Ko‘p beriladigan savollar</h2>
+            <p class="section-subtitle">Tariflar, to‘lov va ulanish bo‘yicha tezkor javoblar.</p>
+          </div>
+
+          <div class="faq">
+            <div class="faq-item">
+              <h4>Yillik tarifda chegirma qanday ishlaydi?</h4>
+              <p>Yillik to‘lov tanlanganda -15% chegirma avtomatik qo‘llanadi. Narx toggle orqali ko‘rsatiladi.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Onboarding va migratsiya bormi?</h4>
+              <p>Ha. Biz ma’lumotlarni ko‘chirish, xodimlarni o‘qitish va sozlashni birga qilamiz.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Filiallar soni oshsa nima bo‘ladi?</h4>
+              <p>Tarifni keyinroq yangilashingiz mumkin. Business paketda filiallar cheksiz.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
       <div class="container footer-grid">
-        <div>
+        <div class="footer-brand">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
-          <p>SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
+          <p class="muted">SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
         </div>
         <div>
           <h4>Mahsulot</h4>
           <a href="features.html">Funksiyalar</a><br />
           <a href="solutions.html">Yechimlar</a><br />
+          <a href="integrations.html">Integratsiyalar</a><br />
           <a href="pricing.html">Tariflar</a>
         </div>
         <div>
           <h4>Kompaniya</h4>
           <a href="about.html">Biz haqimizda</a><br />
-          <a href="contact.html">Aloqa</a>
+          <a href="contact.html">Aloqa</a><br />
+          <a href="privacy.html">Maxfiylik</a><br />
+          <a href="terms.html">Shartlar</a>
         </div>
         <div>
           <h4>Aloqa</h4>
-          <p>+998 90 000 00 00</p>
-          <p>hello@osontrack.uz</p>
+          <p class="muted">+998 90 000 00 00</p>
+          <p class="muted">hello@osontrack.uz</p>
         </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="y"></span> OsonTrack. Barcha huquqlar himoyalangan.</span>
       </div>
     </footer>
 
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/pricing.js"></script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
