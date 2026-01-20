@@ -1,0 +1,18 @@
+server {
+  listen ${PORT};
+  server_name _;
+
+  root /usr/share/nginx/html;
+  index index.html;
+
+  # SPA bo'lsa (route'lar uchun) foydali:
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+
+  # Cache (ixtiyoriy)
+  location ~* \.(css|js|png|jpg|jpeg|gif|svg|ico|webp|woff2?)$ {
+    expires 7d;
+    add_header Cache-Control "public, max-age=604800";
+  }
+}
