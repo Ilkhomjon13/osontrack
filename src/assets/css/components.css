@@ -228,3 +228,65 @@
   .cta-actions { width: 100%; }
   .cta-actions .button { width: 100%; }
 }
+/* =========================================================
+   Add-ons for new premium pages (glow, hover, helpers)
+========================================================= */
+
+/* Glow badge used in hero headers */
+.badge--glow {
+  position: relative;
+  border-color: rgba(124, 92, 255, 0.28);
+  background: rgba(124, 92, 255, 0.12);
+}
+
+.badge--glow::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 999px;
+  background: radial-gradient(140px 60px at 30% 50%, rgba(124,92,255,.28), transparent 60%),
+              radial-gradient(140px 60px at 75% 50%, rgba(34,211,238,.18), transparent 60%);
+  filter: blur(10px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Card hover variant used in solutions/integrations grids */
+.card--hover {
+  transition: transform var(--dur-2) var(--ease),
+              border-color var(--dur-2) var(--ease),
+              box-shadow var(--dur-2) var(--ease),
+              background var(--dur-2) var(--ease);
+}
+
+.card--hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 92, 255, 0.22);
+  box-shadow: var(--shadow-strong);
+  background: rgba(255,255,255,.06);
+}
+
+/* Premium grid: slightly tighter + consistent stretching */
+.card-grid--premium {
+  gap: 1.15rem;
+}
+
+.card-grid--premium .card {
+  border-radius: var(--radius-xl);
+}
+
+/* Helpers */
+.muted { color: var(--color-muted); }
+
+.button-block { width: 100%; }
+
+/* Footer bottom line */
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,.10);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
