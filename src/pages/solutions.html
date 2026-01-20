@@ -4,116 +4,239 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OsonTrack — Yechimlar</title>
+
+    <meta
+      name="description"
+      content="OsonTrack yechimlari: savdo (POS), ombor, hisob-kitob, filiallar nazorati. SRM do‘konlar uchun real vaqt analitika va premium boshqaruv."
+    />
+    <meta name="theme-color" content="#070A12" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../assets/css/tokens.css" />
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/components.css" />
     <link rel="stylesheet" href="../assets/css/pages.css" />
   </head>
+
   <body>
-    <header class="topbar">
+    <header class="topbar" role="banner">
       <div class="container topbar-inner">
-        <a class="logo" href="../index.html">
+        <a class="logo" href="../index.html" aria-label="OsonTrack bosh sahifa">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
         </a>
-        <nav class="nav" data-nav>
+
+        <nav class="nav" data-nav aria-label="Asosiy menyu">
           <a href="../index.html">Bosh sahifa</a>
           <a href="features.html">Funksiyalar</a>
-          <a href="solutions.html">Yechimlar</a>
+          <a href="solutions.html" aria-current="page">Yechimlar</a>
+          <a href="integrations.html">Integratsiyalar</a>
           <a href="pricing.html">Tariflar</a>
           <a href="contact.html">Aloqa</a>
         </nav>
+
         <div class="nav-actions">
-          <button class="mobile-toggle" data-nav-toggle>Menu</button>
+          <button class="mobile-toggle" type="button" data-nav-toggle aria-label="Menyuni ochish/yopish">
+            Menu
+          </button>
           <a class="button button-ghost" href="pricing.html">Demo so‘rash</a>
           <a class="button button-primary" href="contact.html">Sotib olish</a>
         </div>
       </div>
     </header>
 
-    <section class="section">
-      <div class="container">
-        <span class="badge">Yechimlar</span>
-        <h1 class="section-title">SRM do‘konlaringiz uchun mukammal yechimlar.</h1>
-        <p class="section-subtitle">
-          Har bir bo‘lim OsonTrackning real vaqt ko‘rsatkichlari va analytics paneli bilan
-          bog‘langan.
-        </p>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Do‘kon savdosi</h3>
-            <p>POS, chek va kassir jarayonlarini soddalashtirib, navbatlarni qisqartiring.</p>
+    <main>
+      <!-- Hero -->
+      <section class="hero hero--aurora">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="badge badge--glow">Yechimlar</span>
+            <h1 class="hero-title">SRM do‘konlaringiz uchun mukammal yechimlar.</h1>
+            <p class="hero-lead">
+              Har bir bo‘lim OsonTrackning real vaqt ko‘rsatkichlari va analytics paneli bilan bog‘langan.
+              Natija: aniq nazorat, tez qaror, barqaror o‘sish.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="contact.html">Konsultatsiya</a>
+              <a class="button button-ghost" href="pricing.html">Tariflar</a>
+            </div>
+
+            <div class="hero-trust" style="margin-top: 1rem;">
+              <span class="trust-pill">48 soatda onboarding</span>
+              <span class="trust-pill">Filial kesimi</span>
+              <span class="trust-pill">Eksport: Excel/PDF</span>
+              <span class="trust-pill">Integratsiyalar</span>
+            </div>
           </div>
-          <div class="card">
-            <h3>Ombor boshqaruvi</h3>
-            <p>Qoldiq va kirim-chiqim nazorati bilan avtomatik buyurtma rejalashtiring.</p>
+
+          <aside class="card card--elevated">
+            <div class="card-head">
+              <h3 style="margin:0 0 0.35rem;">Kimlar uchun?</h3>
+              <p class="muted" style="margin:0;">SRM, retail va tarmoq do‘konlari uchun mos konfiguratsiyalar.</p>
+            </div>
+
+            <ul class="list-check">
+              <li>Kassir jarayonlarini tezlashtirish</li>
+              <li>Ombor qoldiqlarini doimiy nazorat qilish</li>
+              <li>Moliyaviy ko‘rsatkichlarni bir joyda ko‘rish</li>
+              <li>Filiallarni taqqoslab boshqarish</li>
+            </ul>
+
+            <div class="card-actions">
+              <a class="button button-primary button-block" href="contact.html">Boshlash</a>
+              <a class="button button-ghost button-block" href="features.html">Funksiyalar</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Solutions grid -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Use-case’lar</h2>
+            <p class="section-subtitle">
+              Eng ko‘p uchraydigan biznes vazifalari uchun tayyor yechimlar: tez sozlash, tez natija.
+            </p>
           </div>
-          <div class="card">
-            <h3>Hisob-kitob tizimi</h3>
-            <p>Daromad-xarajat balansini bir tugmada ko‘ring va foydani oshiring.</p>
-          </div>
-          <div class="card">
-            <h3>Filiallar nazorati</h3>
-            <p>Bir nechta do‘konni yagona panelda boshqarib, KPIlarni solishtiring.</p>
+
+          <div class="card-grid card-grid--premium">
+            <article class="card card--hover">
+              <h3>Do‘kon savdosi</h3>
+              <p>POS, chek va kassir jarayonlarini soddalashtirib, navbatlarni qisqartiring.</p>
+              <ul class="list-check">
+                <li>Tez checkout va qaytarishlar</li>
+                <li>Chegirma/aksiya boshqaruvi</li>
+                <li>Kassirlar bo‘yicha nazorat</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <h3>Ombor boshqaruvi</h3>
+              <p>Qoldiq va kirim-chiqim nazorati bilan avtomatik buyurtma rejalashtiring.</p>
+              <ul class="list-check">
+                <li>Qoldiq monitoring</li>
+                <li>Yetkazib beruvchi nazorati</li>
+                <li>Eslatma va rejalashtirish</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <h3>Hisob-kitob tizimi</h3>
+              <p>Daromad-xarajat balansini bir tugmada ko‘ring va foydani oshiring.</p>
+              <ul class="list-check">
+                <li>Daromad/xarajat hisobotlari</li>
+                <li>Qarzdorlik va pul oqimi</li>
+                <li>Moliyaviy tahlil</li>
+              </ul>
+            </article>
+
+            <article class="card card--hover">
+              <h3>Filiallar nazorati</h3>
+              <p>Bir nechta do‘konni yagona panelda boshqarib, KPIlarni solishtiring.</p>
+              <ul class="list-check">
+                <li>Filial kesimi va taqqoslash</li>
+                <li>Rahbar paneli</li>
+                <li>Eksport: Excel/PDF</li>
+              </ul>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="container highlight-panel">
-        <h2 class="section-title">OsonTrack bilan har bir jarayon avtomatlashtiriladi.</h2>
-        <ul class="list-check">
-          <li>O‘rnatish va onboarding 48 soat ichida</li>
-          <li>Raqamli imzo va elektron hisob-faktura integratsiyasi</li>
-          <li>Hisobotlarni Excel va PDF ko‘rinishida eksport qilish</li>
-          <li>Marketologlar uchun sodiqlik kampaniyalari</li>
-        </ul>
-      </div>
-    </section>
+      <!-- Highlight / automation -->
+      <section class="section">
+        <div class="container">
+          <div class="highlight-panel highlight-panel--premium">
+            <span class="badge badge--glow">Avtomatlashtirish</span>
+            <h2 class="section-title" style="margin-top: 0.8rem;">
+              OsonTrack bilan har bir jarayon avtomatlashtiriladi.
+            </h2>
+            <p class="section-subtitle" style="margin-bottom: 0;">
+              Bitta platforma — barcha jarayonlar. Jamoa tez ishlaydi, rahbar aniq ko‘radi.
+            </p>
 
-    <section class="section">
-      <div class="container cta">
-        <div>
-          <h2>SRM do‘koningizga mos yechimni tanlang.</h2>
-          <p>Biz sizning biznes modelingizga mos konfiguratsiyani tayyorlaymiz.</p>
+            <div class="highlight-grid">
+              <ul class="list-check" style="margin-top: 0;">
+                <li>O‘rnatish va onboarding 48 soat ichida</li>
+                <li>Raqamli imzo va elektron hisob-faktura integratsiyasi</li>
+                <li>Hisobotlarni Excel va PDF ko‘rinishida eksport qilish</li>
+                <li>Marketologlar uchun sodiqlik kampaniyalari</li>
+              </ul>
+
+              <div class="mini-card card card--elevated">
+                <h4 style="margin: 0 0 0.35rem;">Tez start paket</h4>
+                <p class="muted" style="margin: 0;">
+                  Sozlash, onboarding va asosiy integratsiyalarni 1 haftagacha bo‘lgan muddatda yakunlaymiz.
+                </p>
+                <div style="margin-top: 1rem;">
+                  <a class="button button-primary button-block" href="contact.html">Bog‘lanish</a>
+                  <a class="button button-ghost button-block" href="pricing.html" style="margin-top: 0.6rem;">Tariflar</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <a class="button button-primary" href="contact.html">Bog‘lanish</a>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <footer class="footer">
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta cta--premium">
+            <div>
+              <h2>SRM do‘koningizga mos yechimni tanlang.</h2>
+              <p class="muted">Biz sizning biznes modelingizga mos konfiguratsiyani tayyorlaymiz.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="contact.html">Bog‘lanish</a>
+              <a class="button button-ghost" href="features.html">Funksiyalar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
       <div class="container footer-grid">
-        <div>
+        <div class="footer-brand">
           <img src="../assets/images/logo-osontrack.svg" alt="OsonTrack logo" />
-          <p>SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
+          <p class="muted">SRM do‘konlari uchun premium hisob-kitob va boshqaruv platformasi.</p>
         </div>
         <div>
           <h4>Mahsulot</h4>
           <a href="features.html">Funksiyalar</a><br />
           <a href="solutions.html">Yechimlar</a><br />
+          <a href="integrations.html">Integratsiyalar</a><br />
           <a href="pricing.html">Tariflar</a>
         </div>
         <div>
           <h4>Kompaniya</h4>
           <a href="about.html">Biz haqimizda</a><br />
-          <a href="contact.html">Aloqa</a>
+          <a href="contact.html">Aloqa</a><br />
+          <a href="privacy.html">Maxfiylik</a><br />
+          <a href="terms.html">Shartlar</a>
         </div>
         <div>
           <h4>Aloqa</h4>
-          <p>+998 90 000 00 00</p>
-          <p>hello@osontrack.uz</p>
+          <p class="muted">+998 90 000 00 00</p>
+          <p class="muted">hello@osontrack.uz</p>
         </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="y"></span> OsonTrack. Barcha huquqlar himoyalangan.</span>
       </div>
     </footer>
 
     <script src="../assets/js/app.js"></script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
